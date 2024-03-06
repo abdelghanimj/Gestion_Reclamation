@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('gestionnaire_reclamations', function (Blueprint $table) {
-            $table->id();
+            $table->id('idGestionnaire');
+            $table->string('nom');
+            $table->string('prenom');
             $table->timestamps();
         });
     }

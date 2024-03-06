@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('reclamations', function (Blueprint $table) {
-            $table->id();
+            $table->id('idReclamation');
+            $table->text('description');
+            $table->string('status');
+            $table->unsignedBigInteger('idClient');
+            $table->foreign('idClient')->references('idClient')->on('clients')->cascadeOnDelete();
             $table->timestamps();
         });
     }

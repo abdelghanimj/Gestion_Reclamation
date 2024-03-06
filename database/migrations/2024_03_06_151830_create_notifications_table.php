@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('notifications', function (Blueprint $table) {
-            $table->id();
+            $table->id('idNotification');
+            $table->text('description');
+            $table->unsignedBigInteger('idReclamation');
+            $table->foreign('idReclamation')->references('idReclamation')->on('reclamations')->cascadeOnDelete();
             $table->timestamps();
         });
     }
