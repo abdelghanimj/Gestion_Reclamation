@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Reclamation extends Model
 {
     use HasFactory;
+    protected $fillable = [
+'idReclamation',
+        'description',
+        'status',
+        'idClient',];
 }
