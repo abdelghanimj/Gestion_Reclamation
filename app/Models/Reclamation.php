@@ -9,8 +9,9 @@ class Reclamation extends Model
 {
     use HasFactory;
     protected $fillable = [
-'idReclamation',
-        'description',
-        'status',
-        'idClient',];
+        "description","status","IdClient"
+    ];
+    protected $primaryKey = "IdReclamation";
+    protected $foreign = "IdClient";
+
 }
